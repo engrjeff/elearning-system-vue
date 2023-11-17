@@ -1,0 +1,45 @@
+.w-full {
+  width: 100%;
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.75rem 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0.25rem;
+
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  color: var(--white);
+  background-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+}
+
+.text-link {
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.text-link:visited {
+  color: var(--primary);
+}
