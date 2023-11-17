@@ -10,6 +10,7 @@ import { addDoc } from 'firebase/firestore'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useProfileStore } from './profile'
 
 export const useAuthStore = defineStore('auth', () => {
   const user = ref(auth.currentUser)
@@ -17,6 +18,7 @@ export const useAuthStore = defineStore('auth', () => {
   const error = ref(null)
 
   const router = useRouter()
+  const profile = useProfileStore()
 
   let errorTimeoutId
 
@@ -92,6 +94,7 @@ export const useAuthStore = defineStore('auth', () => {
   const logout = () => {
     isLoading.value = true
     signOut(auth)
+      .then(() => profile.clearProfile())
       .catch(handleError)
       .finally(() => (isLoading.value = false))
   }

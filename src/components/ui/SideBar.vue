@@ -4,44 +4,17 @@
       <span>LearnNow</span>
     </div>
     <span class="group-label">Menu</span>
-    <nav>
-      <NavLink v-for="menu in menuItems" :key="menu.label" :to="menu.path">
-        <template #icon>
-          <HomeIcon />
-        </template>
-        <span>{{ menu.label }}</span>
-      </NavLink>
-    </nav>
+    <StudentNavLinks v-if="profile.currentRole === 'STUDENT'" />
+    <TeacherNavLinks v-if="profile.currentRole === 'TEACHER'" />
   </aside>
 </template>
 
 <script setup>
-import HomeIcon from '@/components/icons/HomeIcon.vue'
 import { useProfileStore } from '@/store/profile'
-import { computed } from 'vue'
-import NavLink from './NavLink.vue'
+import StudentNavLinks from '../../modules/student/StudentNavLinks.vue'
+import TeacherNavLinks from '../../modules/teacher/TeacherNavLinks.vue'
 
-const profileStore = useProfileStore()
-
-const studentMenu = [
-  { path: '/', label: 'Dashboard', icon: HomeIcon },
-  { path: '/courses', label: 'Browse Courses' },
-  { path: '/my-courses', label: 'My Courses' },
-  { path: '/my-quizzes', label: 'My Quizzes' }
-]
-
-const teacherMenu = [
-  { path: '/course-manager', label: 'Course Manager' },
-  { path: '/quiz-manager', label: 'Quiz Manager' }
-]
-
-const menuItems = computed(() => {
-  return profileStore.profile
-    ? profileStore.profile.role === 'STUDENT'
-      ? studentMenu
-      : studentMenu.concat(teacherMenu)
-    : []
-})
+const profile = useProfileStore()
 </script>
 
 <style scoped>

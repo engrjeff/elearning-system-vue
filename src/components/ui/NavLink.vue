@@ -26,6 +26,7 @@ function subIsActive(input) {
   gap: 0.75rem;
 
   font-size: 0.85rem;
+  line-height: 0;
 }
 
 .nav-link:hover {
