@@ -1,6 +1,6 @@
 <template>
   <div v-if="auth.user">
-    <span>Hi, {{ auth.user.displayName }}</span>
+    <span class="username">Hi, {{ auth.user.displayName }}</span>
   </div>
 </template>
 
@@ -10,4 +10,8 @@ import { useAuthStore } from '../../store/auth'
 const auth = useAuthStore()
 </script>
 
-<style scoped></style>
+<style scoped>
+.username {
+  font-weight: 600;
+}
+</style>

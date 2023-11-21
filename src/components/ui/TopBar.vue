@@ -4,7 +4,7 @@
       <MenuIcon />
     </button>
     <UserGreeting />
-    <div>
+    <div style="margin-left: auto">
       <SignoutButton />
     </div>
   </header>
@@ -25,7 +25,10 @@ import UserGreeting from './UserGreeting.vue'
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1.5rem;
+
+  position: sticky;
+  top: 0;
 }
 
 .icon-btn {

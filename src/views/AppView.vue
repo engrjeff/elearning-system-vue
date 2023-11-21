@@ -4,7 +4,7 @@ import TopBar from '@/components/ui/TopBar.vue'
 </script>
 
 <template>
-  <div class="container">
+  <div class="app-container">
     <SideBar />
     <div class="content-pane">
       <TopBar />
@@ -16,8 +16,9 @@ import TopBar from '@/components/ui/TopBar.vue'
 </template>
 
 <style scoped>
-.container {
+.app-container {
   display: flex;
+  min-height: 100vh;
 }
 
 .content-pane {
@@ -28,7 +29,9 @@ import TopBar from '@/components/ui/TopBar.vue'
 }
 
 .main-content {
-  padding: 1rem;
+  padding: 2rem;
   flex: 1;
+  background-color: var(--white);
+  position: relative;
 }
 </style>

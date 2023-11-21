@@ -52,7 +52,7 @@
 
 .form-control label {
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--black-soft);
 }
 
@@ -70,11 +70,16 @@
 
 .form-action {
   padding: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
 }
 
 /* inputs */
 input:not([type='checkbox']),
 input:not([type='radio']),
+textarea,
 select {
   font-family: inherit;
   font-size: 0.85rem;

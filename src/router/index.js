@@ -9,7 +9,9 @@ import MyQuizzesView from '@/views/student/MyQuizzesView.vue'
 import StudentDashboardView from '@/views/student/StudentDashboardView.vue'
 
 // teacher
+import AddCourseView from '@/views/teacher/AddCourseView.vue'
 import CourseManagerView from '@/views/teacher/CourseManagerView.vue'
+import CourseView from '@/views/teacher/CourseView.vue'
 import QuizManagerView from '@/views/teacher/QuizManagerView.vue'
 import TeacherView from '@/views/teacher/TeacherView.vue'
 
@@ -51,6 +53,14 @@ const routes = [
           {
             path: 'course-manager',
             component: CourseManagerView
+          },
+          {
+            path: 'course-manager/new',
+            component: AddCourseView
+          },
+          {
+            path: 'course-manager/:id',
+            component: CourseView
           },
           {
             path: 'quiz-manager',
